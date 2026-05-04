@@ -6,7 +6,7 @@ An AI-powered internal tool built for Sales reps. Look up a customer by email or
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 - **Instant 360° Customer Lookup**: Search by email or mobile to get a full profile in under a second (policy type, sum insured, membership status, lead history, perks usage, claims).
 - **AI-Generated Sales Pitch**: One click generates a structured, personalized pitch with an opener, talking points, recommended actions, likely objections, and a closing ask.
@@ -14,7 +14,7 @@ An AI-powered internal tool built for Sales reps. Look up a customer by email or
 - **Conversion Signal Highlights**: Automatically surfaces the most important signals (pending callbacks, lapsed perks, open queries) so reps know exactly what to focus on.
 - **Customer Archetype Gallery**: A browsable gallery of customer archetypes ("Win-back", "Highly Engaged", "Service Recovery") for quick pattern identification.
 
-## 🚀 The Problem It Solves
+## The Problem It Solves
 
 Sales reps often go into customer calls underprepared because customer data is scattered across CRM, policy systems, and wellness platforms. This leads to generic pitches and missed opportunities.
 
@@ -30,7 +30,7 @@ Sales reps often go into customer calls underprepared because customer data is s
 - **AI Integration**: LangChain.js, OpenRouter (Anthropic Claude).
 - **Architecture**: Monorepo with npm workspaces (`apps/*`, `packages/*`), Server-Sent Events for token streaming.
 
-## 🚦 Quick Start
+## Quick Start
 
 1. **Clone and setup environment**:
    ```bash
@@ -51,7 +51,7 @@ Sales reps often go into customer calls underprepared because customer data is s
 
 4. **Open the app**: Visit [http://localhost:5173](http://localhost:5173).
 
-## ⚙️ Configuration
+## Configuration
 
 | Env Var | Default | Purpose |
 | --- | --- | --- |
@@ -60,7 +60,7 @@ Sales reps often go into customer calls underprepared because customer data is s
 | `PORT` | `8787` | API port. |
 | `PLUM_CSV_PATH` | `data/sample.csv` | Path to the source CSV. Override to point at a different dataset. |
 
-## 🧪 5-Minute Demo Script
+## 5-Minute Demo Script
 
 The sample CSV exercises every feature. Try these steps:
 
@@ -74,7 +74,7 @@ The sample CSV exercises every feature. Try these steps:
 | 6 | *AI pitch* | On any profile, click **Generate pitch** in the right rail. Tokens stream in as structured Markdown. |
 | 7 | *Q&A* | Below the pitch, try a suggested chip like "Draft a follow-up SMS" and chat with the AI. |
 
-## 💾 Data Layer & Architecture
+## Data Layer & Architecture
 
 ### Swapping the Dataset
 Drop a new CSV at `data/sample.csv` (or set `PLUM_CSV_PATH`) and restart the API. The loader (`apps/api/src/data/csvLoader.ts`) handles header variations and normalizes Indian mobile numbers.
@@ -88,7 +88,7 @@ Implement the `DataSource` interface in `apps/api/src/data/loader.ts` (e.g., a `
 - **`LEARNING.md`** — Pitfalls handled and error templates.
 - **`INFO.md`** — In-depth product and business overview.
 
-## ⌨️ Scripts
+## Scripts
 
 ```bash
 npm run dev                                          # Start both web and api servers
