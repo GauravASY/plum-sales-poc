@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "GT Alpina Standard";
+  src: url("https://fonts.cdnfonts.com/s/37182/GT-Alpina-Standard-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Passenger Sans";
+  src: url("https://fonts.cdnfonts.com/s/116621/PassengerSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 320 45% 11%;
+    --foreground: 40 60% 96%;
+
+    --card: 320 30% 18%;
+    --card-foreground: 40 60% 96%;
+
+    --popover: 320 40% 14%;
+    --popover-foreground: 40 60% 96%;
+
+    --primary: 354 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 320 25% 22%;
+    --secondary-foreground: 40 60% 96%;
+
+    --muted: 320 20% 23%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 354 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 320 15% 30%;
+    --input: 320 15% 30%;
+    --ring: 354 85% 60%;
+
+    --radius: 1rem;
+
+    --bento-bg: 35 80% 96%;
+    --bento-bg-deep: 35 70% 92%;
+
+    --plum-deep: #2b0b21;
+    --coral-accent: #ff4053;
+    --cream: #fff2e6;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body,
+  #root {
+    @apply h-full;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Passenger Sans", "Segoe UI", Arial, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1, "cv11" 1, "ss01" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "GT Alpina Standard", Verdana, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(43, 11, 33, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .bento-card {
+    background: var(--cream);
+    border-radius: 1.25rem;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.08),
+      0 10px 15px -3px rgba(0, 0, 0, 0.04);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #ff4053 0%, #ff6b6b 50%, #ffa07a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(255, 64, 83, 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px rgba(255, 64, 83, 0.6);
+    }
+  }
+}
