@@ -1,0 +1,19 @@
+{
+  "name": "plum-sales-dashboard",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w @plum/api\" \"npm run dev -w @plum/web\"",
+    "build": "npm run build -w @plum/shared && npm run build -w @plum/api && npm run build -w @plum/web",
+    "typecheck": "npm run typecheck -w @plum/shared && npm run typecheck -w @plum/api && npm run typecheck -w @plum/web",
+    "test": "npm test -w @plum/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.5.4"
+  }
+}
